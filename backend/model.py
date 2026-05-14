@@ -5,9 +5,9 @@ from torchvision.models import AlexNet_Weights
 
 def get_model(num_classes):
 
-    weights = AlexNet_Weights.DEFAULT
+    weights = None
 
-    model = models.alexnet(weights=weights)
+    model = models.alexnet(weights=None)
 
     # Freeze feature extractor
     for param in model.features.parameters():
