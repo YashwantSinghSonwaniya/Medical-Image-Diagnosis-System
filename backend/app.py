@@ -1,3 +1,4 @@
+import gdown
 import os
 import cv2
 import torch
@@ -49,6 +50,16 @@ MODEL_PATH = os.path.join(
     BASE_DIR,
     "models/model.pth"
 )
+
+if not os.path.exists(MODEL_PATH):
+
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+
+    file_id = "1SnnIgrOOxrtBMrK3lR0zhm_B4Ew1rLVg"
+
+    url = f"https://drive.google.com/uc?id={file_id}"
+
+    gdown.download(url, MODEL_PATH, quiet=False)
 
 # ---------------------------
 # LOAD MODEL
